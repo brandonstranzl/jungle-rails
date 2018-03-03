@@ -1,5 +1,9 @@
 <h1>Signup!</h1>
 
+<% flash.each do |name, msg| %>
+<h1><%= msg %> </h1>
+<% end %>
+
 <%= form_for :user, url: '/users' do |f| %>
 
   Name: <%= f.text_field :name %>

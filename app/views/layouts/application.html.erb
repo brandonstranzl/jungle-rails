@@ -11,12 +11,15 @@
   <%= render 'layouts/top_nav' %>
 
   <% if current_user %>
-  Signed in as <%= current_user.name %> | <%= link_to "Logout", '/logout' %>
+  <h4>**Signed in as :<%= current_user.name %> | <%= link_to "Logout", '/logout' %>**</h4>
   <% else %>
-  <%= link_to 'Login', '/sessions/new' %> | <%= link_to 'Signup', '/users/new' %>
+  <h4><%= link_to 'Login', '/sessions/new' %> | <%= link_to 'Signup', '/users/new' %></h4>
   <% end %>
 
   <main class="container">
+    <% flash.each do |name, msg| %>
+    <h4><%= msg %> </h4>
+    <% end %>
     <%= yield %>
   </main>
 
