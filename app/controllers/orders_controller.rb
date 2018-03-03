@@ -2,6 +2,7 @@ class OrdersController < ApplicationController
 
   def show
     @order = Order.find(params[:id])
+    @order_total = order_total(@order)
   end
 
   def create
@@ -42,7 +43,8 @@ class OrdersController < ApplicationController
       stripe_charge_id: stripe_charge.id, # returned by stripe
     )
     cart.each do |product_id, details|
-      if product = Product.find_by(id: product_id)
+      product = Product.find_by(id: product_id)
+      if product
         quantity = details['quantity'].to_i
         order.line_items.new(
           product: product,
@@ -63,6 +65,14 @@ class OrdersController < ApplicationController
       if p = Product.find_by(id: product_id)
         total += p.price_cents * details['quantity'].to_i
       end
+    end
+    total
+  end
+
+  def order_total(order)
+    total = 0
+    order.line_items.each do |line_item|
+      total += line_item.total_price
     end
     total
   end

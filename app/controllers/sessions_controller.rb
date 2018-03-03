@@ -15,7 +15,7 @@ class SessionsController < ApplicationController
       # If user's login doesn't work, send them back to the login form.
         # notice: "incorrect username or password",
         # render "new"
-        redirect_to '/sessions/new', notice: "blah blah"
+        redirect_to '/sessions/new', notice: "username and email do not match"
       end
   end
 
