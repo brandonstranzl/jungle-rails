@@ -4,6 +4,12 @@
     <h1>My Cart</h1>
   </header>
 
+  <% if cookies[:cart] == "{}" %>
+    <h2 style="color:orange; background-color:black; text-align: center">
+      Your cart is empty! Please add to it by shopping.<br>
+      Click   <%= link_to 'HERE!', :root %> to shop!</h2>
+  <% else %>
   <%= render 'carts/cartitems' %>
+  <% end %>
 
 </section>

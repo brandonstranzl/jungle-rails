@@ -1,10 +1,9 @@
 class CartsController < ApplicationController
 
   def show
-    
-    if cookies[:cart] == "{}"
-    redirect_to '/', notice: "Your cart is empty! Please add to it by shopping. Click below:"
-    end
+    # if cookies[:cart] == "{}"
+    # redirect_to '/', notice: "Your cart is empty! Please add to it by shopping. Click below:"
+    # end
   end
 
   def add_item
