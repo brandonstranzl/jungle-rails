@@ -18,8 +18,9 @@
 
   <main class="container">
     <% flash.each do |name, msg| %>
-    <h4><%= msg %> </h4>
+    <h3 style="color:orange; background-color: black;"><%= msg %> </h3>
     <% end %>
+
     <%= yield %>
   </main>
 
