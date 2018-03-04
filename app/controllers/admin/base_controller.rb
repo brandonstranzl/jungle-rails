@@ -1,6 +1,6 @@
 class Admin::BaseController < ApplicationController
 
-include ActionController::HttpAuthentication::Basic::ControllerMethods
+# include ActionController::HttpAuthentication::Basic::ControllerMethods
 
 before_filter :authenticate
 
