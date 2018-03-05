@@ -1,11 +1,13 @@
 <div style="display:inline-block; float: right;">
     <table class="table table-bordered">
       <thead>
+        <tr><td>Overall Rating:</td><td colspan="4" style="text-align: center"><%= @product.reviews.average(:rating).to_i %></td>
         <tr>
-          <th>Ratings</th>
+          <th>Rating</th>
           <th>Reviews</th>
           <th>Created_at</th>
-          <th>Delete?</th>
+          <th>Delete</th>
+          <th>My review?</th>
         </tr>
       </thead>
       <tbody>
@@ -15,8 +17,10 @@
       <td>
         <%= link_to fa_icon('trash'), product_path(review.product_id), class: 'btn btn-sm btn-danger', method: :delete, data: { confirm: "Are you sure?" } %>
       </td>
+      <td>   </td>
       <% else %>
-      <td><%= 'Not my review' %></td>
+      <td><%= '3rd Party' %></td>
+      <td> No </td>
       <% end %>
       </tr>
       <% end %>
