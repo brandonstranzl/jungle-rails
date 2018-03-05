@@ -23,6 +23,8 @@ DOTENV file, the app will ask for a username and password from the user, which w
 in the DOTENV file as per the code.
 
 #Screenshots:
+
+
 HERE IS THE HOME PAGE:
 ![home_page:](https://github.com/brandonstranzl/jungle-rails/blob/master/Docs/home_page.png?raw=true)
 
