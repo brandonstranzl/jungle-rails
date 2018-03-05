@@ -1,0 +1,11 @@
+<div style="float:right">
+Add a review:
+<%= form_for [@product, @new_review] do |f| %>
+  <%= label_tag(:content, "Review:") %>
+  <%= f.text_area :content %>
+  <%= label_tag(:rating, "Rating:") %>
+  <%= f.select :rating, [1, 2, 3, 4, 5]%>
+  <%= f.hidden_field :product_id, value:@product.id %>
+  <%= f.submit "Create" %>
+<% end %>
+</div>
